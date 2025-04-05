@@ -4,23 +4,23 @@ from esphome.components import i2c, touchscreen
 import esphome.config_validation as cv
 from esphome.const import CONF_ID, CONF_INTERRUPT_PIN, CONF_RESET_PIN, CONF_THRESHOLD
 
-CODEOWNERS = ["@gpambrozio"]
+CODEOWNERS = ["@arlhampuswall"]
 DEPENDENCIES = ["i2c"]
 
-ft6336u_ns = cg.esphome_ns.namespace("ft63x6")
-FT63X6Touchscreen = ft6336u_ns.class_(
-    "FT63X6Touchscreen",
+ft3168u_ns = cg.esphome_ns.namespace("ft3168")
+FT3168Touchscreen = ft3168u_ns.class_(
+    "FT3168Touchscreen",
     touchscreen.Touchscreen,
     i2c.I2CDevice,
 )
 
-CONF_FT63X6_ID = "ft63x6_id"
+CONF_FT3168_ID = "ft3168_id"
 
 
 CONFIG_SCHEMA = touchscreen.TOUCHSCREEN_SCHEMA.extend(
     cv.Schema(
         {
-            cv.GenerateID(): cv.declare_id(FT63X6Touchscreen),
+            cv.GenerateID(): cv.declare_id(FT3168Touchscreen),
             cv.Optional(CONF_INTERRUPT_PIN): cv.All(
                 pins.internal_gpio_input_pin_schema
             ),

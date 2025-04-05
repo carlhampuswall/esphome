@@ -49,13 +49,13 @@ void FT3168Touchscreen::setup() {
   }
   uint8_t chip_id = this->read_byte_(FT3168_ADDR_CHIP_ID);
   if (chip_id != 0) {
-    ESP_LOGI(TAG, "FT6336U touch driver started chipid: %d", chip_id);
+    ESP_LOGI(TAG, "FT3168 touch driver started chipid: %d", chip_id);
   } else {
-    ESP_LOGE(TAG, "FT6336U touch driver failed to start");
+    ESP_LOGE(TAG, "FT3168 touch driver failed to start");
   }
-  this->write_byte(FT6X36_ADDR_DEVICE_MODE, 0x00);
-  this->write_byte(FT6X36_ADDR_THRESHHOLD, this->threshold_);
-  this->write_byte(FT6X36_ADDR_TOUCHRATE_ACTIVE, 0x0E);
+  this->write_byte(FT3168_ADDR_DEVICE_MODE, 0x00);
+  this->write_byte(FT3168_ADDR_THRESHHOLD, this->threshold_);
+  this->write_byte(FT3168_ADDR_TOUCHRATE_ACTIVE, 0x0E);
 }
 
 void FT3168Touchscreen::hard_reset_() {
