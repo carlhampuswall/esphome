@@ -23,7 +23,7 @@ static const uint8_t FT3168_ADDR_TOUCH1_WEIGHT = 0x06;
 static const uint8_t FT3168_ADDR_TOUCH1_MISC = 0x07;
 static const uint8_t FT3168_ADDR_THRESHHOLD = 0x80;
 static const uint8_t FT3168_ADDR_TOUCHRATE_ACTIVE = 0x87;
-static const uint8_t FT3168_ADDR_CHIP_ID = 0x03;
+static const uint8_t FT3168_ADDR_CHIP_ID = 0xA0;
 
 static const char *const TAG = "FT3168";
 
